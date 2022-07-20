@@ -1,7 +1,7 @@
 
 ## Angular University Reactive Angular
 
-![Screenshot](https://github.com/CarlosEduardoLS/angular-university-router-in-depth/blob/master/src/assets/reactive-angular-course.jpg)
+![Screenshot](https://github.com/CarlosEduardoLS/angular-university-reactive/blob/master/src/assets/reactive-angular-course.jpg)
 
 This project has created to validate the knowledges learned in the course 'Reactive Angular Course' ministering in Angular University
 
