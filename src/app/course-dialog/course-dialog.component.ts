@@ -10,6 +10,7 @@ import { CoursesService } from "../services/courses.service";
   selector: "course-dialog",
   templateUrl: "./course-dialog.component.html",
   styleUrls: ["./course-dialog.component.css"],
+  providers: [LoadingService],
 })
 export class CourseDialogComponent implements AfterViewInit {
   form: FormGroup;
@@ -36,8 +37,13 @@ export class CourseDialogComponent implements AfterViewInit {
   ngAfterViewInit() {}
 
   save() {
-    this.coursesService
-      .saveCourse(this.course.id, this.form.value)
+    const saveCourses$ = this.coursesService.saveCourse(
+      this.course.id,
+      this.form.value
+    );
+
+    this.loadingService
+      .showLoaderUntilCompleted(saveCourses$)
       .subscribe((val) => this.dialogRef.close(val));
   }
 
