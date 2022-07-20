@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { LoadingService } from "../loading/loading.service";
 import { Course, sortCoursesBySeqNo } from "../model/course";
 import { CoursesService } from "../services/courses.service";
 
@@ -10,7 +11,10 @@ import { CoursesService } from "../services/courses.service";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  constructor(private readonly coursesService: CoursesService) {}
+  constructor(
+    private readonly coursesService: CoursesService,
+    private readonly loadingService: LoadingService
+  ) {}
 
   beginnerCourses$: Observable<Course[]>;
   advancedCourses$: Observable<Course[]>;

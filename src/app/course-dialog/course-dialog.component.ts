@@ -2,6 +2,7 @@ import { AfterViewInit, Component, Inject } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import * as moment from "moment";
+import { LoadingService } from "../loading/loading.service";
 import { Course } from "../model/course";
 import { CoursesService } from "../services/courses.service";
 
@@ -19,7 +20,8 @@ export class CourseDialogComponent implements AfterViewInit {
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<CourseDialogComponent>,
     @Inject(MAT_DIALOG_DATA) course: Course,
-    private readonly coursesService: CoursesService
+    private readonly coursesService: CoursesService,
+    private readonly loadingService: LoadingService
   ) {
     this.course = course;
 
