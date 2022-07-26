@@ -1,4 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { Lesson } from "../model/lesson";
+import { CoursesService } from "../services/courses.service";
 
 @Component({
   selector: "course",
@@ -6,7 +9,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./search-lessons.component.css"],
 })
 export class SearchLessonsComponent implements OnInit {
-  constructor() {}
+  constructor(private readonly coursesService: CoursesService) {}
+
+  searchResults$: Observable<Lesson[]>;
 
   ngOnInit() {}
+
+  onSearch(search: string) {
+    this.searchResults$ = this.coursesService.searchLessons(search);
+  }
 }
