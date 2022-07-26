@@ -1,9 +1,6 @@
 @use '@angular/material' as mat;
 /* You can add global styles to this file, and also import other style files */
 
-
-
-
 // Include non-theme styles for core.
 @include mat.core();
 
@@ -72,7 +69,6 @@ $mat-accent: (
     A700: white,
   )
 );
-
 
 // Define a theme.
 $primary: mat.define-palette(mat.$pink-palette);

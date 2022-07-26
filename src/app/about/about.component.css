@@ -1,16 +1,13 @@
-
 .course-image {
   max-width: 300px;
   border-radius: 4px;
 }
-
 
 .about {
   padding: 40px;
   display: flex;
   flex-direction: column;
 }
-
 
 .about button {
   max-width: 100px;

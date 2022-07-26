@@ -1,32 +1,19 @@
+<div class="course">
+  <h2>{{ course?.description }}</h2>
 
-  <div class="course">
+  <img class="course-thumbnail" [src]="course?.iconUrl" />
 
-    <h2>{{course?.description}}</h2>
-
-    <img class="course-thumbnail" [src]="course?.iconUrl">
-
-    <table class="lessons-table mat-elevation-z7">
-
-      <thead>
+  <table class="lessons-table mat-elevation-z7">
+    <thead>
       <th>#</th>
       <th>Description</th>
       <th>Duration</th>
-      </thead>
+    </thead>
 
-      <tr class="lesson-row" *ngFor="let lesson of lessons">
-        <td class="seqno-cell">{{lesson.seqNo}}</td>
-        <td class="description-cell">{{lesson.description}}</td>
-        <td class="duration-cell">{{lesson.duration}}</td>
-      </tr>
-
-    </table>
-
-  </div>
-
-
-
-
-
-
-
-
+    <tr class="lesson-row" *ngFor="let lesson of lessons">
+      <td class="seqno-cell">{{ lesson.seqNo }}</td>
+      <td class="description-cell">{{ lesson.description }}</td>
+      <td class="duration-cell">{{ lesson.duration }}</td>
+    </tr>
+  </table>
+</div>

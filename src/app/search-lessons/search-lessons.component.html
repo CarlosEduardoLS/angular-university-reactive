@@ -1,11 +1,13 @@
 <div class="course">
-
   <h2>Search All Lessons</h2>
 
   <mat-form-field class="search-bar">
-
-    <input matInput placeholder="Type your search" #searchInput autocomplete="off">
-
+    <input
+      matInput
+      placeholder="Type your search"
+      #searchInput
+      autocomplete="off"
+    />
   </mat-form-field>
 
   <button class="search" mat-raised-button color="primary">
@@ -13,28 +15,17 @@
     Search
   </button>
 
-    <table class="lessons-table mat-elevation-z7">
-
-      <thead>
+  <table class="lessons-table mat-elevation-z7">
+    <thead>
       <th>#</th>
       <th>Description</th>
       <th>Duration</th>
-      </thead>
+    </thead>
 
-      <!-- tr class="lesson-row">
+    <!-- tr class="lesson-row">
         <td class="seqno-cell">{{lesson.seqNo}}</td>
         <td class="description-cell">{{lesson.description}}</td>
         <td class="duration-cell">{{lesson.duration}}</td>
       </tr -->
-
-    </table>
-
-
-
+  </table>
 </div>
-
-
-
-
-
-
