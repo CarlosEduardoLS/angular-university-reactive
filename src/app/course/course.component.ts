@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { Observable } from "rxjs";
 import { Course } from "../model/course";
 import { Lesson } from "../model/lesson";
+import { CoursesService } from "../services/courses.service";
 
 @Component({
   selector: "course",
@@ -9,11 +11,20 @@ import { Lesson } from "../model/lesson";
   styleUrls: ["./course.component.css"],
 })
 export class CourseComponent implements OnInit {
-  course: Course;
+  constructor(
+    private route: ActivatedRoute,
+    private readonly coursesService: CoursesService
+  ) {}
 
-  lessons: Lesson[];
+  course$: Observable<Course>;
 
-  constructor(private route: ActivatedRoute) {}
+  lessons$: Observable<Lesson[]>;
 
-  ngOnInit() {}
+  ngOnInit() {
+    const courseId = parseInt(this.route.snapshot.paramMap.get("courseId"));
+
+    this.course$ = this.coursesService.findById(courseId);
+
+    this.lessons$ = this.coursesService.findLessonsByCourseId(courseId);
+  }
 }
