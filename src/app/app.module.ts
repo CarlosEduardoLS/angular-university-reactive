@@ -37,6 +37,9 @@ import { SearchLessonsComponent } from "./search-lessons/search-lessons.componen
 import { CoursesService } from "./services/courses.service";
 import { LoadingService } from "./loading/loading.service";
 import { MessagesService } from "./messages/messages.service";
+import { StoreModule } from "@ngrx/store";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,8 @@ import { MessagesService } from "./messages/messages.service";
     MatDatepickerModule,
     MatMomentDateModule,
     ReactiveFormsModule,
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   exports: [CourseCardListComponent],
   providers: [CoursesService, LoadingService, MessagesService],
